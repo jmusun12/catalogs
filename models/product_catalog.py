@@ -21,7 +21,7 @@ class ProductCatalog(models.Model):
     product_ids = fields.One2many(comodel_name="product.catalog.line", inverse_name="catalog_id", string="Productos")
 
     def print_product_catalog(self):
-        return self.env.ref('product_catalog.report_product_catalog').report_action(self)
+        return self.env.ref('catalogs.report_product_catalog').report_action(self)
 
     def css_title(self):
         return 'color: {0} !important; font-family: {1} !important; font-size: {2} !important;'.format(
