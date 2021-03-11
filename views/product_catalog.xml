@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+     <!--Sección para administración de catalogos de productos-->
+    <record model="ir.ui.view" id="product_catalog_tree_view">
+        <field name="name">product.catalog.view</field>
+        <field name="model">product.catalog</field>
+        <field name="arch" type="xml">
+            <tree string="Catálogos de productos">
+                <field name="name"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="view_product_catalog_action">
+        <field name="name">Catálogos de productos</field>
+        <field name="res_model">product.catalog</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="product_catalog_tree_view"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Crea tu primer catálogo personalizado</p>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_product_catalog_form"><!--Form-->
+        <field name="name">Catálogo</field>
+        <field name="model">product.catalog</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form string="Catálogo">
+                <header>
+                    <button name="print_product_catalog" string="Imprimir catálogo"
+                                type="object"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <separator string="Encabezado"/>
+                            <field name="header_image" string="Imagen" widget="image" class="oe_avatar"/>
+                            <field name="name" string="Título"/>
+                            <field name="font_type_title" string="Tipografía" widget="font_picker"/>
+                            <field name="text_color_title" string="Color del texto" widget="color"/>
+                            <field name="font_size_title"/>
+                        </group>
+                        <group>
+                            <separator string="Productos"/>
+                            <field name="color_content_product" string="Fondo del cuadrado" widget="color"/>
+                            <field name="text_color_product" string="Color del texto" widget="color"/>
+                            <field name="font_type_text_product" string="Tipografía del texto" widget="font_picker"/>
+                            <field name="font_size_text_product"/>
+
+                            <separator string="Pie de página"/>
+                            <field name="footer_image" string="Imagen" widget="image" class="oe_avatar"/>
+                            <field name="company_id"/>
+                        </group>
+                    </group>
+
+                     <notebook>
+                         <page string="Productos">
+                            <field name="product_ids" widget="section_and_note_one2many"
+                                    mode="tree">
+                                <tree editable="bottom" default_order="id">
+                                    <control>
+                                        <create name="add_line_control" string="Agregar linea"/>
+                                    </control>
+
+                                    <!-- Displayed fields -->
+                                    <field name="catalog_id" invisible="1"/>
+                                    <field name="company_id" invisible="1"/>
+                                    <field name="product_id" optional="show" domain="['|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]"/>
+                                </tree>
+                            </field>
+                        </page>
+                     </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Fin seccion catalogo de productos-->
+    <menuitem id="menu_product_catalog" name="Catálogos de productos" action="view_product_catalog_action"/>
+</odoo>
