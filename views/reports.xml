@@ -9,8 +9,8 @@
     	<field name="orientation">Landscape</field>
     	<field name="margin_top">0</field>
     	<field name="margin_bottom">0</field>
-    	<field name="margin_left">-3</field>
-    	<field name="margin_right">-3</field>
+    	<field name="margin_left">0</field>
+    	<field name="margin_right">0</field>
     	<field name="header_line" eval="False"/>
     	<field name="header_spacing">0</field>
     	<field name="dpi">80</field>
@@ -23,8 +23,7 @@
 		report_type="qweb-pdf"
 		name="catalogs.report_catalog"
 		file="catalogs.report_catalog"
-		attachment_use="True"
-		attachment="(object.name +'.pdf')"
+		attachment_use="False"
         menu="True"
         print_report_name="'%s' % (object.name)"
 		paperformat="report_paperformat"

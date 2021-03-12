@@ -24,7 +24,8 @@ class ProductCatalog(models.Model):
         return self.env.ref('catalogs.report_product_catalog').report_action(self)
 
     def css_title(self):
-        return 'color: {0} !important; font-family: {1} !important; font-size: {2} !important;'.format(
+        self.ensure_one()
+        return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important;'.format(
             self.text_color_title, self.font_type_title, self.font_size_title
         )
 
