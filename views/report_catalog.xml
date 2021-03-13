@@ -39,7 +39,7 @@
                     <!--Div con listado de productos-->
                     <div class="row mt-3" style="padding-top: 3px !important;">
                         <div class="col-12" style="text-align: center;">
-                            <div class="container" style="text-align: center; height: 57.93rem !important; padding-bottom: 5px !important;">
+                            <div class="container" style="text-align: center; max-height: 57.93rem !important; min-height: 57.93rem !important;; padding-bottom: 5px !important;">
                                 <t t-foreach="group" t-as="product">
                                     <!--Div para un producto-->
                                     <div style="width: 26% !important; padding: 0.5rem !important; text-align: center !important;
