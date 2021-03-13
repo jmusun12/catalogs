@@ -10,66 +10,92 @@
 
     <template id="report_catalog_tmpl">
         <xpath expr="//div[@class='header']" position="replace">
-            <div class="header mb5" style="max-height: 200px !important;">
-                <div style="position: relative; text-align: center;">
-                    <img t-att-src="image_data_uri(doc.header_image)" alt="Encabezado del  Catálogo"
-                         style="width: 100% !important; height: 75px !important;"/>
-                    <div style="position: absolute; transform: translate(-50%, -50%); top: 50%; left: 5%;">
-                        <p t-att-style="doc.css_title()" t-esc="doc.name"></p>
-                    </div>
-                </div>
+            <div class="header" style="max-height: 0px !important;">
             </div>                                  
         </xpath>
         <t t-call="web.external_layout">
             <t t-set="doc" t-value="doc.with_context()"/>
 
-            <div class="page">
+            <div class="page m-0 p-0">
                 <div class="oe_structure"/>
 
-                <div class="row" style="padding-top: 7px !important;">
-                    <!--Div con listado de productos-->
-                    <div class="container text-center">
-                        <t t-foreach="doc.product_ids" t-as="product">
-                            <!--Div para un producto-->
-                            <div style="width: 26% !important; padding: 1.5rem !important; text-align: center !important;
-                                        display: inline-block;  vertical-align: top;">
-                                <div style="border: 1px solid #e96465;">
-                                    <div>
-                                        <img t-att-src="image_data_uri(product.product_id.image_1920)"
-                                             alt="Producto" style="width: 250px !important;"/>
-                                    </div>
-                                </div>
-                                <div style="background-color:#e96465 !important; padding: 5px;">
-                                    <p style="color: white;" t-esc="product.product_id.name"></p>
-                                    <p style="color: white;" t-esc="product.product_id.default_code"></p>
-                                    <p style="color: white;" t-esc="product.product_id.lst_price"></p>
+                <t t-foreach="doc.group_lines()" t-as="group">
+                    <!--Encabezado de cada página-->
+                    <div class="row">
+                        <div class="col-12 mb-0 p-0">
+                            <div id="start" style="position: relative; display: inline-block; text-align: center; width: 100%;">
+                                <!--Imagen de encabezado-->
+                                <img t-att-src="image_data_uri(doc.header_image)" alt="Encabezado del  Catálogo"
+                                             style="width: 100% !important; height: 75px !important;"/>
+                                <!--Texto sobre la imagen-->
+                                <div style="position: absolute; top: 25%; transform: translate(-50%, 25%);
+                                            width: 100% !important; text-align: center;">
+                                    <p t-att-style="doc.css_title()" t-esc="doc.name"></p>
                                 </div>
                             </div>
-                        </t>
+                        </div>
                     </div>
-                </div>
+
+                    <!--Div con listado de productos-->
+                    <div class="row mt-3" style="padding-top: 3px !important;">
+                        <div class="col-12" style="text-align: center;">
+                            <div class="container" style="text-align: center; height: 57.93rem !important; padding-bottom: 5px !important;">
+                                <t t-foreach="group" t-as="product">
+                                    <!--Div para un producto-->
+                                    <div style="width: 26% !important; padding: 0.5rem !important; text-align: center !important;
+                                                display: inline-block;">
+                                        <div t-att-style="doc.css_border_rect()">
+                                            <div>
+                                                <img t-att-src="image_data_uri(product.product_id.image_1920)"
+                                                     alt="Producto" style="width: 250px !important; margin: 5px !important;"/>
+                                            </div>
+
+                                            <div t-att-style="doc.css_bg_rect()">
+                                                <p t-att-style="doc.css_data_rect()" t-esc="product.product_id.name"></p>
+                                                <p t-att-style="doc.css_data_rect()" t-esc="product.product_id.default_code"></p>
+                                                <p t-att-style="doc.css_data_rect()" t-esc="product.product_id.lst_price"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Footer de cada pagina-->
+                    <div class="row">
+                         <div class="col-12 mt-0 mr-0 ml-0">
+                             <div style="position: absolute; bottom: 0px; left: 0px; right: 0px; display: inline-block; text-align: center; width: 100%;">
+                                <img t-att-src="image_data_uri(doc.footer_image)" alt="Pie del  Catálogo" style="width: 100% !important; height: 75px !important;"/>
+                            </div>
+                         </div>
+                    </div>
+                </t>
+
 
                 <div class="oe_structure"/>
             </div>
 
             <xpath expr="//div[@class='footer']" position="replace">
-                <div class="footer">
-                    <div class="oe_structure"/>
-                    <div style="padding: 0px !important; margin-top: 10px !important;">
-                        <div style="position: relative;">
-                            <img t-att-src="image_data_uri(doc.footer_image)" alt="Pie del  Catálogo" style="width: 100% !important; height: 75px !important;"/>           
-                        </div>
-                    </div>
-                </div>
+                <div class="footer" style="max-width: 0px !important;"></div>
             </xpath>
         </t>
         <style>
+            main {
+                margin: 0px !important;
+                padding: 0px !important;
+            }
+
+            body {
+                margin: 0px !important;
+                padding: 0px !important;
+            }
+
             @media print {
-                thead {
+                #start {
                     page-break-inside: avoid;
                 }
-
-                #div-final
+                #final
                 {
                     page-break-inside: avoid;
                 }

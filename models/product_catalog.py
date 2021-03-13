@@ -1,5 +1,5 @@
 from odoo import models, fields
-
+import logging
 
 class ProductCatalog(models.Model):
     _name = 'product.catalog'
@@ -29,6 +29,41 @@ class ProductCatalog(models.Model):
             self.text_color_title, self.font_type_title, self.font_size_title
         )
 
+    def css_border_rect(self):
+        self.ensure_one()
+        return 'border: 1px solid {0} !important;'.format(self.color_content_product)
+
+    def css_bg_rect(self):
+        self.ensure_one()
+        return 'background-color:{0} !important; padding: 5px;'.format(self.color_content_product)
+
+    def css_data_rect(self):
+        self.ensure_one()
+        return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important;'.format(
+            self.text_color_product, self.font_type_text_product, self.font_size_text_product
+        )
+
+    def group_lines(self):
+        self.ensure_one()
+
+        cont = 0
+        groups = []
+        aux = []
+        for line in self.product_ids:
+            if cont > 5:
+                groups.append(aux)
+                aux = []
+                cont = 0
+
+            aux.append(line)
+            cont += 1
+
+        if len(aux):
+            groups.append(aux)
+
+        return groups
+
+
 class ProductCatalogLine(models.Model):
     _name = 'product.catalog.line'
     _description = 'Lineas del catalogo'
@@ -36,6 +71,6 @@ class ProductCatalogLine(models.Model):
     catalog_id = fields.Many2one('product.catalog', 'Catalogo', ondelete="cascade")
     product_id = fields.Many2one(comodel_name="product.template", string="Producto")
     company_id = fields.Many2one('res.company', string='Empresa', default=lambda self: self.env.user.company_id)
-
+    product_image = fields.Binary('Imagen Producto', related='product_id.image_1920')
 
 
