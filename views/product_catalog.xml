@@ -48,6 +48,8 @@
                             <field name="text_color_product" string="Color del texto" widget="color"/>
                             <field name="font_type_text_product" string="Tipografía del texto" widget="font_picker"/>
                             <field name="font_size_text_product"/>
+                            <field name="width_image"/>
+                            <field name="height_image"/>
 
                             <separator string="Pie de página"/>
                             <field name="footer_image" string="Imagen" widget="image" class="oe_avatar"/>
