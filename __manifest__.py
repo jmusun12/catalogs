@@ -13,6 +13,7 @@
         'security/ir.model.access.csv',
         'views/product_catalog.xml',
         'views/report_catalog.xml',
-        'views/reports.xml'
+        'views/reports.xml',
+        'views/product_template.xml'
     ]
 }

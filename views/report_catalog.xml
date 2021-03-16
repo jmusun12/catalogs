@@ -42,11 +42,12 @@
                             <div class="container" style="text-align: center; max-height: 47.30rem !important; min-height: 47.30rem !important;; padding-bottom: 5px !important;">
                                 <t t-foreach="group" t-as="product">
                                     <!--Div para un producto-->
-                                    <div style="width: 26% !important; padding: 0.5rem !important; text-align: center !important;
-                                                display: inline-block;">
+                                    <div style="border: 1px solid black; width: 147.38px !important; padding: 0.5rem !important; text-align: center !important;
+                                                display: inline-block; height: 204.92px !important; border-bottom-left-radius: 40px 40px;
+                                                border-bottom-right-radius: 40px 40px;">
                                         <div t-att-style="doc.css_border_rect()">
                                             <div>
-                                                <img t-att-src="image_data_uri(product.product_id.image_1920)"
+                                                <img t-att-src="image_data_uri(product.product_id.image_catalog)"
                                                      alt="Producto" t-att-style="doc.css_image_product()"/>
                                             </div>
 
