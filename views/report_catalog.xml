@@ -53,7 +53,7 @@
                                             <div t-att-style="doc.css_bg_rect()">
                                                 <p t-att-style="doc.css_data_rect()" t-esc="product.product_id.name"></p>
                                                 <p t-att-style="doc.css_data_rect_1()" t-esc="product.product_id.default_code"></p>
-                                                <p t-att-style="doc.css_data_rect_1()">$ <span t-esc="round(product.product_id.lst_price, 2)"/></p>
+                                                <p t-att-style="doc.css_data_rect_1()">$ <span t-esc="'{:.2f}'.format(product.product_id.lst_price)"/></p>
                                             </div>
                                         </div>
                                     </div>

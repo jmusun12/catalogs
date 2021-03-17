@@ -33,11 +33,13 @@ class ProductCatalog(models.Model):
 
     def css_border_rect(self):
         self.ensure_one()
-        return 'border: 1px solid {0} !important; width: 200px !important; height: 300px !important;'.format(self.color_content_product)
+        return 'border: 1px solid {0} !important; width: 200px !important; height: 300px !important; ' \
+               'border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;'.format(self.color_content_product)
 
     def css_bg_rect(self):
         self.ensure_one()
-        return 'background-color:{0} !important; padding: 5px; width: 200px !important; height: 111px !important'.format(self.color_content_product)
+        return 'background-color:{0} !important; padding: 5px; width: 200px !important; height: 111px !important; ' \
+               'border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;'.format(self.color_content_product)
 
     def css_data_rect(self):
         self.ensure_one()
