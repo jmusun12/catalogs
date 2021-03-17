@@ -17,8 +17,8 @@ class ProductCatalog(models.Model):
     text_color_product = fields.Char('Color de texto del producto', required=True)
     font_size_text_product = fields.Integer(string='Tamaño de fuente', required=True, default=12)
     font_type_text_product = fields.Char('Tipografía del texto del producto', required=True)
-    width_image = fields.Char(string='Ancho imagen (medidas en px, rem, %)', default='130px', required=True)
-    height_image = fields.Char(string='Alto imagen (medidas en px, rem, %)', default='130px', required=True)
+    width_image = fields.Char(string='Ancho imagen (medidas en px, rem, %)', default='147px', required=True)
+    height_image = fields.Char(string='Alto imagen (medidas en px, rem, %)', default='147px', required=True)
 
     product_ids = fields.One2many(comodel_name="product.catalog.line", inverse_name="catalog_id", string="Productos")
 
@@ -37,16 +37,16 @@ class ProductCatalog(models.Model):
 
     def css_bg_rect(self):
         self.ensure_one()
-        return 'background-color:{0} !important; padding: 5px; width: 200px !important; height: 110px !important'.format(self.color_content_product)
+        return 'background-color:{0} !important; padding: 5px; width: 200px !important; height: 111px !important'.format(self.color_content_product)
 
     def css_data_rect(self):
         self.ensure_one()
         return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important; overflow-wrap: ' \
-               'break-word;'.format(
+               'break-word; margin-top: 1px; margin-bottom: 1px; height: 50px !important;'.format(
             self.text_color_product, self.font_type_text_product, self.font_size_text_product
         )
 
-    def css_data_rect(self):
+    def css_data_rect_1(self):
         self.ensure_one()
         return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important; margin-bottom: 1px; ' \
                'margin-top: 1px;'.format(

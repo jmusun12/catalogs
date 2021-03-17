@@ -19,7 +19,7 @@
     <report
 		id="report_product_catalog"
 		model="product.catalog"
-		string="Catálogos PDF"
+		string="Imprimir catálogo"
 		report_type="qweb-pdf"
 		name="catalogs.report_catalog"
 		file="catalogs.report_catalog"
