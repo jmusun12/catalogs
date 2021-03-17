@@ -33,21 +33,31 @@ class ProductCatalog(models.Model):
 
     def css_border_rect(self):
         self.ensure_one()
-        return 'border: 1px solid {0} !important;'.format(self.color_content_product)
+        return 'border: 1px solid {0} !important; width: 200px !important; height: 355px !important;'.format(self.color_content_product)
 
     def css_bg_rect(self):
         self.ensure_one()
-        return 'background-color:{0} !important; padding: 5px; width: 100% !important; height: 62.44px !important'.format(self.color_content_product)
+        return 'background-color:{0} !important; padding: 5px; width: 200px !important; height: 120px !important; ' \
+               'max-height: 120px !important'.format(self.color_content_product)
 
     def css_data_rect(self):
         self.ensure_one()
-        return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important;'.format(
+        return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important; overflow-wrap: ' \
+               'break-word;'.format(
             self.text_color_product, self.font_type_text_product, self.font_size_text_product
         )
 
+    def css_data_rect_1(self):
+        self.ensure_one()
+        return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important; margin-bottom: 1px; margin-top: 1px;'.format(
+            self.text_color_product, self.font_type_text_product, self.font_size_text_product
+        )
+
+
     def css_image_product(self):
         self.ensure_one()
-        return 'width: {0} !important; height: {1} !important; margin: 5px !important;'.format(self.width_image, self.height_image)
+        return 'width: {0} !important; height: {1} !important; margin-top: 20px !important; margin-bottom: 20px ' \
+               '!important;'.format("147px", "147px")
 
     def group_lines(self):
         self.ensure_one()

@@ -42,22 +42,25 @@
                             <div class="container" style="text-align: center; max-height: 47.30rem !important; min-height: 47.30rem !important;; padding-bottom: 5px !important;">
                                 <t t-foreach="group" t-as="product">
                                     <!--Div para un producto-->
-                                    <div style="border: 1px solid black; width: 147.38px !important; padding: 0.5rem !important; text-align: center !important;
-                                                display: inline-block; height: 204.92px !important; border-bottom-left-radius: 40px 40px;
-                                                border-bottom-right-radius: 40px 40px;">
+                                    <div style="width: 200px !important; height: 355px !important; padding: 0.5rem !important; text-align: center !important;
+                                                display: inline-block; margin-left: 1.5rem; margin-right: 1.5rem; margin-top: 1.5rem;">
                                         <div t-att-style="doc.css_border_rect()">
-                                            <div>
+                                            <div style="width: 200px !important; height; 275px !important; margin-bottom: 1.5rem !important; margin-top: 1.5rem !important;">
                                                 <img t-att-src="image_data_uri(product.product_id.image_catalog)"
                                                      alt="Producto" t-att-style="doc.css_image_product()"/>
                                             </div>
 
                                             <div t-att-style="doc.css_bg_rect()">
                                                 <p t-att-style="doc.css_data_rect()" t-esc="product.product_id.name"></p>
-                                                <p t-att-style="doc.css_data_rect()" t-esc="product.product_id.default_code"></p>
-                                                <p t-att-style="doc.css_data_rect()">$ <span t-esc="round(product.product_id.lst_price, 2)"/></p>
+                                                <p t-att-style="doc.css_data_rect_1()" t-esc="product.product_id.default_code"></p>
+                                                <p t-att-style="doc.css_data_rect_1()">$ <span t-esc="round(product.product_id.lst_price, 2)"/></p>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <t t-if="product_index == 2">
+                                        <br/>
+                                    </t>
                                 </t>
                             </div>
                         </div>
