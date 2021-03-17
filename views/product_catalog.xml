@@ -81,5 +81,5 @@
     </record>
 
     <!--Fin seccion catalogo de productos-->
-    <menuitem id="menu_product_catalog" name="Catálogos de productos" action="view_product_catalog_action"/>
+    <menuitem id="menu_product_catalog" name="Catálogos PDF" action="view_product_catalog_action"/>
 </odoo>
