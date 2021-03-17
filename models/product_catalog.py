@@ -33,12 +33,11 @@ class ProductCatalog(models.Model):
 
     def css_border_rect(self):
         self.ensure_one()
-        return 'border: 1px solid {0} !important; width: 200px !important; height: 355px !important;'.format(self.color_content_product)
+        return 'border: 1px solid {0} !important; width: 200px !important; height: 300px !important;'.format(self.color_content_product)
 
     def css_bg_rect(self):
         self.ensure_one()
-        return 'background-color:{0} !important; padding: 5px; width: 200px !important; height: 120px !important; ' \
-               'max-height: 120px !important'.format(self.color_content_product)
+        return 'background-color:{0} !important; padding: 5px; width: 200px !important; height: 110px !important'.format(self.color_content_product)
 
     def css_data_rect(self):
         self.ensure_one()
@@ -47,12 +46,12 @@ class ProductCatalog(models.Model):
             self.text_color_product, self.font_type_text_product, self.font_size_text_product
         )
 
-    def css_data_rect_1(self):
+    def css_data_rect(self):
         self.ensure_one()
-        return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important; margin-bottom: 1px; margin-top: 1px;'.format(
+        return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important; margin-bottom: 1px; ' \
+               'margin-top: 1px;'.format(
             self.text_color_product, self.font_type_text_product, self.font_size_text_product
         )
-
 
     def css_image_product(self):
         self.ensure_one()
