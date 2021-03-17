@@ -26,7 +26,7 @@
                             <div id="start" style="position: relative; display: inline-block; text-align: center; width: 100%;">
                                 <!--Imagen de encabezado-->
                                 <img t-att-src="image_data_uri(doc.header_image)" alt="Encabezado del  Catálogo"
-                                             style="width: 100% !important; height: 75px !important;"/>
+                                             style="width: 100% !important; height: 68px !important;"/>
                                 <!--Texto sobre la imagen-->
                                 <div style="position: absolute; top: 25%; transform: translate(-50%, 25%);
                                             width: 100% !important; text-align: center;">
@@ -70,7 +70,7 @@
                     <div class="row">
                          <div class="col-12 mt-0 mr-0 ml-0">
                              <div style="position: absolute; bottom: 0px; left: 0px; right: 0px; display: inline-block; text-align: center; width: 100%;">
-                                <img t-att-src="image_data_uri(doc.footer_image)" alt="Pie del  Catálogo" style="width: 100% !important; height: 75px !important;"/>
+                                <img t-att-src="image_data_uri(doc.footer_image)" alt="Pie del  Catálogo" style="width: 100% !important; height: 84px !important;"/>
                             </div>
                          </div>
                     </div>
