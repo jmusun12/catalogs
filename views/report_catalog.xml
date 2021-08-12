@@ -39,7 +39,7 @@
                     <!--Div con listado de productos-->
                     <div class="row mt-3" style="padding-top: 3px !important;">
                         <div class="col-12" style="text-align: center;">
-                            <div class="container" style="text-align: center; max-height: 47.30rem !important; min-height: 47.30rem !important;; padding-bottom: 5px !important;">
+                            <div class="container" style="text-align: center; max-height: 47.63rem !important; min-height: 47.63rem !important;; padding-bottom: 5px !important;">
                                 <t t-foreach="group" t-as="product">
                                     <!--Div para un producto-->
                                     <div style="width: 200px !important; height: 300px !important; padding: 0.5rem !important; text-align: center !important;
@@ -70,7 +70,7 @@
                     <div class="row">
                          <div class="col-12 mt-0 mr-0 ml-0">
                              <div style="position: absolute; bottom: 0px; left: 0px; right: 0px; display: inline-block; text-align: center; width: 100%;">
-                                <img t-att-src="image_data_uri(doc.footer_image)" alt="Pie del  Catálogo" style="width: 100% !important; height: 84px !important;"/>
+                                <img t-att-src="image_data_uri(doc.footer_image)" alt="Pie del  Catálogo" style="width: 100% !important; height: 90px !important;"/>
                             </div>
                          </div>
                     </div>
