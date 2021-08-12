@@ -1,6 +1,7 @@
 from odoo import models, fields
 import logging
 
+
 class ProductCatalog(models.Model):
     _name = 'product.catalog'
     _description = 'Modelo para creación de catálogos de productos'
@@ -17,8 +18,8 @@ class ProductCatalog(models.Model):
     text_color_product = fields.Char('Color de texto del producto', required=True)
     font_size_text_product = fields.Integer(string='Tamaño de fuente', required=True, default=12)
     font_type_text_product = fields.Char('Tipografía del texto del producto', required=True)
-    width_image = fields.Char(string='Ancho imagen (medidas en px, rem, %)', default='147px', required=True)
-    height_image = fields.Char(string='Alto imagen (medidas en px, rem, %)', default='147px', required=True)
+    width_image = fields.Char(string='Ancho imagen (medidas en píxeles)', default='147px', required=True)
+    height_image = fields.Char(string='Alto imagen (medidas en píxeles)', default='147px', required=True)
 
     product_ids = fields.One2many(comodel_name="product.catalog.line", inverse_name="catalog_id", string="Productos")
 
@@ -57,8 +58,8 @@ class ProductCatalog(models.Model):
 
     def css_image_product(self):
         self.ensure_one()
-        return 'width: {0} !important; height: {1} !important; margin-top: 20px !important; margin-bottom: 20px ' \
-               '!important;'.format("147px", "147px")
+        return 'width: {0}px !important; height: {1}px !important; margin-top: 20px !important; margin-bottom: 20px ' \
+               '!important;'.format(self.width_image, self.height_image)
 
     def group_lines(self):
         self.ensure_one()
@@ -89,5 +90,3 @@ class ProductCatalogLine(models.Model):
     product_id = fields.Many2one(comodel_name="product.template", string="Producto")
     company_id = fields.Many2one('res.company', string='Empresa', default=lambda self: self.env.user.company_id)
     product_image = fields.Binary('Imagen Producto', related='product_id.image_catalog')
-
-
