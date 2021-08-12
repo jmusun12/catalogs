@@ -70,6 +70,34 @@
                     <div class="row">
                          <div class="col-12 mt-0 mr-0 ml-0">
                              <div style="position: absolute; bottom: 0px; left: 0px; right: 0px; display: inline-block; text-align: center; width: 100%;">
+                                 <div class="social-red">
+                                     <div class="instagram" style="position:fixed;margin-top:45px;color: white;margin-left: 15px;">
+                                         <div class="img-intagram" style="float:left;">
+                                             <img src="/catalogs/static/src/img/instagram.png" style="height:25px;"/>
+                                         </div>
+                                         <div class="link" height="45px" style="float:right;margin-top: 3px;">
+                                             <a href="https://www.instagram.com/chicosjugueteseducativos/" style="margin-left:5px;color: white;display:inline-block;">instagram.com/chicosjugueteseducativos/</a>
+                                         </div>
+                                     </div>
+                                     <div class="instagram" style="position:fixed;margin-top:45px; margin-left: 345px;color: white;">
+                                         <div class="img-facebook" style="float:left;">
+                                             <img src="/catalogs/static/src/img/facebook.png" style="height:25px;"/>
+                                         </div>
+                                         <div class="link" height="45px" style="float:right;margin-top: 3px;">
+                                            <a href="https://www.facebook.com/ChicosJuguetesEducativos" style="margin-left:5px;color: white;display:inline-block;">facebook.com/ChicosJuguetesEducativos</a>
+                                         </div>
+                                     </div>
+                                     <div class="maps" style="position:fixed;margin-top:45px; margin-left: 675px;color: white;">
+                                         <div class="img-facebook" style="float:left;">
+                                            <img src="/catalogs/static/src/img/maps.png" style="height:25px;"/>
+                                         </div>
+                                         <div class="link" height="45px" style="float:right;margin-top: 3px;">
+                                             <a href="https://www.google.com/maps/?q=13.707237, -89.233894" style="margin-left:5px;color:white;display:inline-block;">
+                                             9 Calle Poniente # 3972 503 Colonia Escalón, El Salvador
+                                         </a>
+                                         </div>
+                                     </div>
+                                 </div>
                                 <img t-att-src="image_data_uri(doc.footer_image)" alt="Pie del  Catálogo" style="width: 100% !important; height: 84px !important;"/>
                             </div>
                          </div>
