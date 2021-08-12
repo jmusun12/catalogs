@@ -76,7 +76,7 @@
                                              <img src="/catalogs/static/src/img/instagram.png" style="height:25px;"/>
                                          </div>
                                          <div class="link" height="45px" style="float:right;margin-top: 3px;">
-                                             <a href="https://www.instagram.com/chicosjugueteseducativos/" style="margin-left:5px;color: white;display:inline-block;font-size: 12px;">instagram.com/chicosjugueteseducativos/</a>
+                                             <a href="https://www.instagram.com/chicosjugueteseducativos/" style="margin-left:5px;color: white;display:inline-block;font-size: 10px;">instagram.com/chicosjugueteseducativos/</a>
                                          </div>
                                      </div>
                                      <div class="instagram" style="position:fixed;margin-top:45px; margin-left: 345px;color: white;">
@@ -84,7 +84,7 @@
                                              <img src="/catalogs/static/src/img/facebook.png" style="height:25px;"/>
                                          </div>
                                          <div class="link" height="45px" style="float:right;margin-top: 3px;">
-                                            <a href="https://www.facebook.com/ChicosJuguetesEducativos" style="margin-left:5px;color: white;display:inline-block;font-size: 12px;">facebook.com/ChicosJuguetesEducativos</a>
+                                            <a href="https://www.facebook.com/ChicosJuguetesEducativos" style="margin-left:5px;color: white;display:inline-block;font-size: 10px;">facebook.com/ChicosJuguetesEducativos</a>
                                          </div>
                                      </div>
                                      <div class="maps" style="position:fixed;margin-top:45px; margin-left: 675px;color: white;">
@@ -92,7 +92,7 @@
                                             <img src="/catalogs/static/src/img/maps.png" style="height:25px;"/>
                                          </div>
                                          <div class="link" height="45px" style="float:right;margin-top: 3px;">
-                                             <a href="https://www.google.com/maps/?q=13.707237, -89.233894" style="margin-left:5px;color:white;display:inline-block;font-size: 12px;">
+                                             <a href="https://www.google.com/maps/?q=13.707237, -89.233894" style="margin-left:5px;color:white;display:inline-block;font-size: 10px;">
                                              9 Calle Poniente # 3972 503 Colonia Escalón, El Salvador
                                          </a>
                                          </div>
