@@ -18,8 +18,8 @@ class ProductCatalog(models.Model):
     text_color_product = fields.Char('Color de texto del producto', required=True)
     font_size_text_product = fields.Integer(string='Tamaño de fuente', required=True, default=12)
     font_type_text_product = fields.Char('Tipografía del texto del producto', required=True)
-    width_image = fields.Char(string='Ancho imagen (medidas en píxeles)', default='147px', required=True)
-    height_image = fields.Char(string='Alto imagen (medidas en píxeles)', default='147px', required=True)
+    width_image = fields.Char(string='Ancho imagen (medidas en píxeles)', default='180', required=True)
+    height_image = fields.Char(string='Alto imagen (medidas en píxeles)', default='180', required=True)
 
     product_ids = fields.One2many(comodel_name="product.catalog.line", inverse_name="catalog_id", string="Productos")
 
@@ -58,7 +58,7 @@ class ProductCatalog(models.Model):
 
     def css_image_product(self):
         self.ensure_one()
-        return 'width: {0}px !important; height: {1}px !important; margin-top: 20px !important; margin-bottom: 20px ' \
+        return 'width: {0}px !important; height: {1}px !important; margin-top: 5px !important; margin-bottom: 5px ' \
                '!important;'.format(self.width_image, self.height_image)
 
     def group_lines(self):
