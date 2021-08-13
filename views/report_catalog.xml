@@ -26,7 +26,7 @@
                             <div id="start" style="position: relative; display: inline-block; text-align: center; width: 100%;">
                                 <!--Imagen de encabezado-->
                                 <img t-att-src="image_data_uri(doc.header_image)" alt="Encabezado del  Catálogo"
-                                             style="width: 100% !important; height: 68px !important;"/>
+                                             style="width: 100% !important; height: auto !important;"/>
                                 <!--Texto sobre la imagen-->
                                 <div style="position: absolute; top: 25%; transform: translate(-50%, 25%);
                                             width: 100% !important; text-align: center;">
@@ -37,13 +37,13 @@
                     </div>
 
                     <!--Div con listado de productos-->
-                    <div class="row mt-3" style="padding-top: 3px !important;">
-                        <div class="col-12" style="text-align: center;">
-                            <div class="container" style="text-align: center; max-height: 47.63rem !important; min-height: 47.63rem !important;; padding-bottom: 5px !important;">
+                    <div class="row">
+                        <div class="col-12" style="text-align: center;margin-top: 0.67rem !important;">
+                            <div class="container" style="text-align: center; max-height: 47.70rem !important; min-height: 47.70rem !important;padding-top: 3px; padding-bottom: 15px !important;">
                                 <t t-foreach="group" t-as="product">
                                     <!--Div para un producto-->
                                     <div style="width: 200px !important; height: 300px !important; padding: 0.5rem !important; text-align: center !important;
-                                                display: inline-block; margin-left: 1.5rem; margin-right: 1.5rem; margin-top: 1.5rem;">
+                                                display: inline-block; margin-left: 1.5rem; margin-right: 1.5rem; margin-bottom: 1.5rem;">
                                         <div t-att-style="doc.css_border_rect()">
                                             <div style="width: 200px !important; height; 175px !important;">
                                                 <img t-att-src="image_data_uri(product.product_id.image_catalog)"
@@ -69,9 +69,9 @@
                     <!--Footer de cada pagina-->
                     <div class="row">
                          <div class="col-12 mt-0 mr-0 ml-0">
-                             <div style="position: absolute; bottom: 0px; left: 0px; right: 0px; display: inline-block; text-align: center; width: 100%;">
+                             <div style="position: absolute; bottom: 0px; left: 0px; right: 0px; display: inline-block; text-align: center; width: 100%;padding-top: 12px !important;">
                                  <div class="social-red">
-                                     <div class="instagram" style="position:fixed;margin-top:45px;color: white;margin-left: 15px;">
+                                     <div class="instagram" style="position:fixed;margin-top:45px;color: white;margin-left: 15px; padding-top: 15px !important;">
                                          <div class="img-intagram" style="float:left;">
                                              <img src="/catalogs/static/src/img/instagram.png" style="height:25px;"/>
                                          </div>
@@ -79,7 +79,7 @@
                                              <a href="https://www.instagram.com/chicosjugueteseducativos/" style="margin-left:5px;color: white;display:inline-block;font-size: 10px;">instagram.com/chicosjugueteseducativos/</a>
                                          </div>
                                      </div>
-                                     <div class="instagram" style="position:fixed;margin-top:45px; margin-left: 345px;color: white;">
+                                     <div class="instagram" style="position:fixed;margin-top:45px; margin-left: 300px;color: white; padding-top: 15px !important;">
                                          <div class="img-facebook" style="float:left;">
                                              <img src="/catalogs/static/src/img/facebook.png" style="height:25px;"/>
                                          </div>
@@ -87,7 +87,7 @@
                                             <a href="https://www.facebook.com/ChicosJuguetesEducativos" style="margin-left:5px;color: white;display:inline-block;font-size: 10px;">facebook.com/ChicosJuguetesEducativos</a>
                                          </div>
                                      </div>
-                                     <div class="maps" style="position:fixed;margin-top:45px; margin-left: 675px;color: white;">
+                                     <div class="maps" style="position:fixed;margin-top:45px; margin-left: 580px;color: white; padding-top: 15px !important;">
                                          <div class="img-facebook" style="float:left;">
                                             <img src="/catalogs/static/src/img/maps.png" style="height:25px;"/>
                                          </div>
@@ -98,7 +98,7 @@
                                          </div>
                                      </div>
                                  </div>
-                                 <img t-att-src="image_data_uri(doc.footer_image)" alt="Pie del  Catálogo" style="width: 100% !important; height: 90px !important;"/>
+                                 <img t-att-src="image_data_uri(doc.footer_image)" alt="Pie del  Catálogo" style="width: 100% !important; height: auto !important;"/>
                             </div>
                          </div>
                     </div>
