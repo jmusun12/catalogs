@@ -53,7 +53,14 @@
                                             <div t-att-style="doc.css_bg_rect()">
                                                 <p t-att-style="doc.css_data_rect()" t-esc="product.product_id.name"/>
                                                 <p t-att-style="doc.css_data_rect_1()">$ <span t-esc="'{:.2f}'.format(product.product_id.lst_price)"/></p>
-                                                <p t-att-style="doc.css_data_rect_2()" t-esc="product.product_id.default_code"/>
+                                                <p t-att-style="doc.css_data_rect_2()">
+                                                    <t t-if="product.product_id.default_code">
+                                                        <span t-esc="product.product_id.default_code"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span>N/A</span>
+                                                    </t>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
