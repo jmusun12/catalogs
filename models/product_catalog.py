@@ -53,7 +53,14 @@ class ProductCatalog(models.Model):
         self.ensure_one()
         return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important; margin-bottom: 1px; ' \
                'margin-top: 1px;'.format(
-            self.text_color_product, self.font_type_text_product, '10'
+            self.text_color_product, self.font_type_text_product, self.font_size_text_product
+        )
+
+    def css_data_rect_2(self):
+        self.ensure_one()
+        return 'color: {0} !important; font-family: {1} !important; font-size: {2}px !important; margin-bottom: 1px; ' \
+               'margin-top: 1px;'.format(
+            self.text_color_product, self.font_type_text_product, '9'
         )
 
     def css_image_product(self):
